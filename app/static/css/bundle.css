@@ -1,0 +1,11 @@
+body {
+    background-color: red;
+}
+
+.test {
+    &_inv {
+        background-color: #ffffff;
+    }
+}
+
+/*# sourceMappingURL=bundle.css.map*/

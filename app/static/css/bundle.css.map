@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///src/css/style.css"],"names":[],"mappings":"AAAA;IACI,qBAAqB;AACzB;;AAEA;IACI;QACI,yBAAyB;IAC7B;AACJ,C","file":"css/bundle.css","sourcesContent":["body {\r\n    background-color: red;\r\n}\r\n\r\n.test {\r\n    &_inv {\r\n        background-color: #ffffff;\r\n    }\r\n}"],"sourceRoot":""}

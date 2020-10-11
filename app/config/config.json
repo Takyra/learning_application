@@ -1,0 +1,28 @@
+{
+    "port" : 8080,
+    "nunjucks" : {
+        "format"     : "njk",
+        "template"   : "app/template",
+        "autoescape" : true
+    },
+    "lang"    : {
+        "list"      : ["en", "ru"],
+        "default"   : "en",
+        "directory" : "lang"
+    },
+    "session" : {
+        "secret" : "KillerJsJim",
+        "key"    : "sid",
+        "cookie" : {
+            "path"     : "/",
+            "httpOnly" : true,
+            "maxAge"   : null
+        }
+    },
+    "db" : {
+        "host"     : "localhost",
+        "database" : "test_connection",
+        "user"     : "root",
+        "password" : "root"
+    }
+}

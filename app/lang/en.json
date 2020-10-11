@@ -1,0 +1,14 @@
+{
+    "localization" : {
+        "titlePage" : "Authorization on node js",
+        "anon" : "Anonim",
+        "form" : {
+            "auth"         : "Authorization",
+            "regs"         : "Registration",
+            "login"        : "login",
+            "password"     : "password",
+            "showPassword" : "Show password",
+            "send"         : "Send"
+        }
+    }
+}

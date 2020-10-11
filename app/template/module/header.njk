@@ -1,0 +1,35 @@
+<header class="header">
+    <div class="header__wrapper wrapper">
+        <a href="/">
+            Logo
+        </a>
+
+        <div class="header__userContext userContext">
+            {% if param.userName %}
+                <button type="button" class="userContext__name">{{ param.userName }}</button>
+
+                <ul class="userContext__list">
+                    <li class="userContext__item">
+                        <a href="#" class="userContext__link">Настройки</a>
+                    </li>
+                    <li class="userContext__item">
+                        <button type="button" class="userContext__button">Выйти</button>
+                    </li>
+                </ul>
+            {% else %}
+                <button type="button" class="userContext__button" data-popup-button="authorization">Войти</button>
+                <button type="button" class="userContext__button" data-popup-button="registration">Зарегистрироваться</button>
+            {% endif %}
+        </div>
+
+        <select class="languageSelection" name="lang">
+            {% for language in param.langList %}
+                {% if language === param.curLang %}
+                    <option value="{{ language }}" selected="selected">{{ language }}</option>
+                {% else %}
+                    <option value="{{ language }}">{{ language }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+    </div>
+</header>

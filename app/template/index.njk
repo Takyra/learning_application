@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="{{ param.curLang }}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="Keywords" content="">
+    <title>{{ lang.titlePage }}</title>
+    <link rel="shortcut icon" href="../static/images/favicon.png">
+    <link rel="stylesheet" href="../static/css/bundle.css">
+</head>
+
+<body>
+    {% include "module/header.njk" %}
+
+    <main>
+
+    </main>
+
+    {% include "module/footer.njk" %}
+
+    {% include "popup/authorization.njk" %}
+    {% include "popup/registration.njk" %}
+    {% include "popup/message.njk" %}
+
+    <script src="../static/js/bundle.js"></script>
+    {# <script src="/socket.io/socket.io.js"></script> #}
+</body>
+</html>
