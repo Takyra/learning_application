@@ -1,9 +1,12 @@
 const path                 = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin           = require('copy-webpack-plugin');
+const HtmlPlugin           = require('html-webpack-plugin');
 
 const PATHS = {
-    src  : path.join(__dirname, '../src'),
-    dist : path.join(__dirname, '../app/static/')
+    src    : path.join(__dirname, '../src'),
+    dist   : path.join(__dirname, '../client'),
+    assets : 'static'
 }
 
 module.exports = {
@@ -16,8 +19,9 @@ module.exports = {
     },
 
     output: {
-        filename: 'js/[name].js',
-        path: PATHS.dist
+        filename: `${PATHS.assets}/js/[name].js`,
+        path: PATHS.dist,
+        publicPath: '/'
     },
 
     watchOptions: {
@@ -48,7 +52,6 @@ module.exports = {
             test: /\.css$/,
             exclude: /node_modules/,
             use: [
-                'style-loader',
                 MiniCssExtractPlugin.loader,
                 {
                     loader: 'css-loader',
@@ -65,22 +68,35 @@ module.exports = {
                     }
                 }
             ]
+        }, {
+            test: /\.(png|jpg|svg)$/,
+            exclude: /node_modules/,
+            use: {
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]'
+                }
+            }
         }]
     },
 
     plugins: [
         new MiniCssExtractPlugin({
-            filename  : 'css/[name].css'
+            filename : `${PATHS.assets}/css/[name].css`
         }),
+        // new HtmlPlugin({
+        //     hash     : false,
+        //     template : `${PATHS.src}/template/index.njk`,
+        //     filename : './index.njk'
+        // }),
+        new CopyPlugin({
+            patterns: [{
+                from : `${PATHS.src}/template`,
+                to   : 'template'
+            }, {
+                from : `${PATHS.src}/images`,
+                to   : `${PATHS.assets}/images`
+            }]
+        })
     ]
 };
-
-// module.exports = env => {
-//     let build = 'dev';
-
-//     if (env.production) {
-//         build = 'prod';
-//     }
-
-//     return require(`./config/webpack.${build}.js`);
-// }

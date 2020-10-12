@@ -2,7 +2,7 @@
     "port" : 8080,
     "nunjucks" : {
         "format"     : "njk",
-        "template"   : "app/template",
+        "template"   : "src/template",
         "autoescape" : true
     },
     "lang"    : {

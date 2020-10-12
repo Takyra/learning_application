@@ -33,7 +33,7 @@ app.use(session({
     cookie : config.get('session:cookie')
 }));
 
-app.use('/static', express.static(path.join(__dirname, 'static')));
+app.use('/static', express.static(path.join(__dirname, '../client/static')));
 
 i18n.configure({
     locales       : config.get('lang:list'),

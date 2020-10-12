@@ -6,10 +6,10 @@
   "author": "g.azarov",
   "license": "MIT",
   "scripts": {
-    "dev": "webpack --env=development --progress --color --watch",
-    "prod": "webpack --env=production --progress --color",
-    "start": "nodemon app/app.js",
-    "app:dev": "concurrently 'npm:dev' 'npm:start'"
+    "build:dev": "webpack-dev-server --env=development --progress --color",
+    "build:prod": "webpack --env=production --progress --color",
+    "build:server": "nodemon server/index.js",
+    "build:app": "concurrently 'npm:build:dev' 'npm:build:server'"
   },
   "browserslist": [
     "> 1%",
@@ -35,18 +35,21 @@
     "autoprefixer": "^10.0.1",
     "babel-loader": "^8.1.0",
     "concurrently": "^5.3.0",
+    "copy-webpack-plugin": "^6.2.1",
     "css-loader": "^4.3.0",
     "css-mquery-packer": "^1.2.4",
     "cssnano": "^4.1.10",
+    "file-loader": "^6.1.1",
+    "html-webpack-plugin": "^4.5.0",
     "mini-css-extract-plugin": "^1.0.0",
     "nodemon": "^2.0.4",
     "postcss": "^8.1.1",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^4.0.3",
     "postcss-nested": "^5.0.1",
-    "style-loader": "^2.0.0",
     "webpack": "^5.0.0",
-    "webpack-cli": "^4.0.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.2.0"
   }
 }
