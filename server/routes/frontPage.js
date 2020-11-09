@@ -11,7 +11,7 @@ exports.get = (req, res) => {
     const param = {
         userName : session.username,
         langList : config.get('lang:list'),
-        curLang  : session.lang,
+        curLang  : session.lang
     };
 
     res.render('index', {

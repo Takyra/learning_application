@@ -4,7 +4,6 @@ const getFormData = require('./getFormData');
 const sendData    = require('./sendData');
 
 const authorization = response => {
-    console.log('authorization', response);
     if (response.access !== 'allowed') return false;
 
     const user = document.querySelectorAll('.login');
@@ -80,6 +79,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
         select.addEventListener('change', e => {
             sendData({lang: e.target.value}, ':lang', (res) => {
+                if (res.ok) {
+                    window.location.reload();
+                }
+            });
+        });
+    }
+
+    // Change color theme
+    const themeSelect = document.querySelectorAll('select[name="colorTheme"]');
+
+    for (let i = 0; i < themeSelect.length; i++) {
+        const select = themeSelect[i];
+
+        select.addEventListener('change', e => {
+            sendData({theme: e.target.value}, ':theme', (res) => {
                 if (res.ok) {
                     window.location.reload();
                 }

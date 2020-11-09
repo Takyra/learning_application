@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ param.curLang }}">
+{% if param.userName %}
+    <html lang="{{ param.curLang }}" data-theme-color="{{ param.theme }}">
+{% else %}
+    <html lang="{{ param.curLang }}">
+{% endif %}
 
 <head>
     <meta charset="UTF-8">

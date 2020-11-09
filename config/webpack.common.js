@@ -84,11 +84,6 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename : `${PATHS.assets}/css/[name].css`
         }),
-        // new HtmlPlugin({
-        //     hash     : false,
-        //     template : `${PATHS.src}/template/index.njk`,
-        //     filename : './index.njk'
-        // }),
         new CopyPlugin({
             patterns: [{
                 from : `${PATHS.src}/template`,

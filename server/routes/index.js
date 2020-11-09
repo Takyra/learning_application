@@ -6,4 +6,6 @@ module.exports = app => {
     app.post('/registration', require('./registration'));
 
     app.post('/:lang', require('./lang'));
+
+    app.post('/:theme', require('./theme'));
 };

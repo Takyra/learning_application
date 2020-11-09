@@ -1,0 +1,12 @@
+@import 'themes';
+
+body {
+    background-color: var(--background-color);
+}
+// TODO
+/*1234*/
+.test {
+    &_inv {
+        background-color: #ffffff;
+    }
+}

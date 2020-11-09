@@ -1,5 +1,5 @@
-const log    = require('../libs/log')(module);
-const langs  = require('../lang');
+const log   = require('../libs/log')(module);
+const langs = require('../lang');
 
 module.exports = server => {
     const socket = require('socket.io')(server);

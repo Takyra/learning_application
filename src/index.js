@@ -1,2 +1,2 @@
 import './scripts/common';
-import './styles/styles.css';
+import './styles/index.css';

@@ -7,8 +7,11 @@
     },
     "lang"    : {
         "list"      : ["en", "ru"],
-        "default"   : "en",
-        "directory" : "lang"
+        "default"   : "en"
+    },
+    "theme"   : {
+        "list"    : ["default", "dark"],
+        "default" : "default"
     },
     "session" : {
         "secret" : "KillerJsJim",
